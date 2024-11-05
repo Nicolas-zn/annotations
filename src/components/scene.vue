@@ -44,10 +44,6 @@ const logic =async ()=>{
   const model =await utils.loadGLTFModel(url.href)
   const code = new Code(scene,camera,renderer,model.scene)
   scene.add(model.scene)
-  model.scene.traverse(obj=>{
-    console.log(obj,obj.name);
-    
-  })
   // code.addBox()
   code.loadMarker()
   const marker = code.addMarker(new Vector3(3,1,0),"2")

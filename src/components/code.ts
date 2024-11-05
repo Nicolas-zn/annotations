@@ -64,6 +64,7 @@ export default class Code {
         sprite.scale.set(1, 1, 1);
         this.scene.add(sprite);
     }
+    // 以下为传参方法
     createMarker(content: string, color: string) {
         const canvas = document.createElement('canvas') as HTMLCanvasElement
         canvas.height = 64
@@ -102,6 +103,7 @@ export default class Code {
         this.scene.add(sprite)
         return sprite
     }
+    // 为marker添加广告牌
     addBillboard(marker: Sprite, content: HTMLDivElement | string) {
         const position = marker.position.clone();
         // const position = new Vector3(0,0,0);
@@ -123,11 +125,17 @@ export default class Code {
             annotation.style.marginLeft = '15px'
             // annotation.style.marginTop = '15px'
         }
-        console.log(annotation);
         document.body.appendChild(annotation)
+        annotation.style.cursor = "pointer"
+        annotation.addEventListener('click',()=>{
+            console.log('click the div');
+            
+        })
         const animate = () => {
             requestAnimationFrame(animate)
+            // 更新billboard的位置
             this.updateBillboardPosition(marker.position, annotation)
+            // 是否被遮挡
             this.updateDistance(marker,annotation)
         }
         animate.bind(this)
@@ -164,11 +172,13 @@ export default class Code {
             marker.material.opacity = 0.25
             billBoard.style.color = 'red'; // 例如，设置被阻挡时显示红色
             billBoard.innerText = `距离: ${distance.toFixed(2)} - 有遮挡`;
+            billBoard.style.opacity = '0.25'
         } else {
             marker.material.opacity = 1
-
             billBoard.style.color = 'green'; // 未被阻挡时显示绿色
             billBoard.innerText = `距离: ${distance.toFixed(2)} - 无遮挡`;
+            billBoard.style.opacity = '1'
+
         }
     }
     removeMarker(marker: Sprite) {
