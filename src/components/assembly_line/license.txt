@@ -1,0 +1,11 @@
+Model Information:
+* title:	Assembly line
+* source:	https://sketchfab.com/3d-models/assembly-line-7bc390083e2e4abc88f7013948b0791c
+* author:	MD.Jobair Hossain (https://sketchfab.com/samrat33k)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Assembly line" (https://sketchfab.com/3d-models/assembly-line-7bc390083e2e4abc88f7013948b0791c) by MD.Jobair Hossain (https://sketchfab.com/samrat33k) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
