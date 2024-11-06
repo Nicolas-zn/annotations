@@ -40,7 +40,6 @@ const render = () => {
 import Code from './code.ts'
 import { utils } from './utils.ts';
 const logic = async () => {
-  // //const url = new URL('./assembly_line/scene.gltf',import.meta.url)
   const model =await utils.loadGLTFModel('/models/assembly_line/scene.gltf')
   // const url = new URL('./assembly_line/scene.gltf', import.meta.url)
   // const model = await utils.loadGLTFModel(url.href)
