@@ -40,8 +40,8 @@ const render = () => {
 import Code from './code.ts'
 import { utils } from './utils.ts';
 const logic =async ()=>{
-  const url = new URL('./assembly_line/scene.gltf',import.meta.url)
-  const model =await utils.loadGLTFModel(url.href)
+  // const url = new URL('./assembly_line/scene.gltf',import.meta.url)
+  const model =await utils.loadGLTFModel('/assembly_line/scene.gltf')
   const code = new Code(scene,camera,renderer,model.scene)
   scene.add(model.scene)
   // code.addBox()
