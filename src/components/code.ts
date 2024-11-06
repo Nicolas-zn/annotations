@@ -172,12 +172,12 @@ export default class Code {
             marker.material.opacity = 0.25
             billBoard.style.color = 'red'; // 例如，设置被阻挡时显示红色
             billBoard.innerText = `距离: ${distance.toFixed(2)} - 有遮挡`;
-            billBoard.style.opacity = '0.25'
+            // billBoard.style.opacity = '0.25'
         } else {
             marker.material.opacity = 1
             billBoard.style.color = 'green'; // 未被阻挡时显示绿色
             billBoard.innerText = `距离: ${distance.toFixed(2)} - 无遮挡`;
-            billBoard.style.opacity = '1'
+            // billBoard.style.opacity = '1'
 
         }
     }
