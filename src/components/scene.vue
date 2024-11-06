@@ -2,7 +2,7 @@
 import { Scene, PerspectiveCamera, WebGLRenderer, DirectionalLight, AmbientLight, Vector3 } from 'three';
 import { OrbitControls } from 'three/examples/jsm/Addons.js';
 import { onBeforeUnmount, onMounted, ref } from 'vue';
-const three= ref()
+const three = ref()
 let scene: Scene,
   camera: PerspectiveCamera,
   renderer: WebGLRenderer,
@@ -27,7 +27,7 @@ let init_scene = async () => {
   scene.add(light, new AmbientLight(0xffffff, 0.75));
   // add_helper();
 };
-onMounted(()=>{
+onMounted(() => {
   init_scene()
   logic()
   render()
@@ -39,15 +39,17 @@ const render = () => {
 };
 import Code from './code.ts'
 import { utils } from './utils.ts';
-const logic =async ()=>{
-  // const url = new URL('./assembly_line/scene.gltf',import.meta.url)
-  const model =await utils.loadGLTFModel('/assembly_line/scene.gltf')
-  const code = new Code(scene,camera,renderer,model.scene)
+const logic = async () => {
+  // //const url = new URL('./assembly_line/scene.gltf',import.meta.url)
+  // const model =await utils.loadGLTFModel('/assembly_line/scene.gltf')
+  const url = new URL('./assembly_line/scene.gltf', import.meta.url)
+  const model = await utils.loadGLTFModel(url.href)
+  const code = new Code(scene, camera, renderer, model.scene)
   scene.add(model.scene)
   // code.addBox()
   code.loadMarker()
-  const marker = code.addMarker(new Vector3(3,1,0),"2")
-  code.addBillboard(marker,'交换机')
+  const marker = code.addMarker(new Vector3(3, 1, 0), "2")
+  code.addBillboard(marker, '交换机')
 }
 onBeforeUnmount(() => {
   cancelAnimationFrame(rf);
